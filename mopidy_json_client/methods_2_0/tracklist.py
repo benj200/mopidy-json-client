@@ -84,7 +84,7 @@ class TracklistController (MopidyWSController):
         return self.mopidy_request('core.tracklist.previous_track', tl_track=tl_track, **options)
 
     # DEPRECATED
-    def add(self, tracks=None, at_position=None, uri=None, uris=None, **options):
+    def add(self, tracks=None, at_position=None, uris=None, **options):
         '''Add tracks to the tracklist.
         If ``uri`` is given instead of ``tracks``, the URI is looked up in the
         library and the resulting tracks are added to the tracklist.
@@ -109,7 +109,7 @@ class TracklistController (MopidyWSController):
         .. deprecated:: 1.0
             The ``tracks`` and ``uri`` arguments. Use ``uris``.
         '''
-        return self.mopidy_request('core.tracklist.add', tracks=tracks, at_position=at_position, uri=uri, uris=uris, **options)
+        return self.mopidy_request('core.tracklist.add', tracks=tracks, at_position=at_position, uris=uris, **options)
 
     def get_eot_tlid(self, **options):
         '''The TLID of the track that will be played after the current track.
