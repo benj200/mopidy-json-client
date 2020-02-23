@@ -151,7 +151,7 @@ class ErrorMessage(object):
 
         output['title'] = input_error.get('message')
         inner_data = input_error.get('data')
-        if isinstance(inner_data, basestring):
+        if isinstance(inner_data, str):
             output['error'] = inner_data
         elif 'message' in input_error:
             output['error'] = inner_data.get('message')
